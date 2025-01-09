@@ -1,1 +1,58 @@
-[{"id":"0a42b7894b8d2f5a43d1","title":"Chaqueta EstampadaEL602","description":"Una blusa cruzada de corte moderno y clásico presenta dos bolsillos de parche delanteros, costuras princesa delanteras y traseras y aberturas laterales. Longitud del centro de la espalda: 26 ","code":"EL602","price":115,"status":true,"stock":10,"category":"chaqueta","gender":"F","marca":"Elle","color":"azul"},{"id":"6843af7748d0da07340b","title":"Chaqueta WW610","description":"Un top cruzado de corte moderno y clásico presenta yugos delanteros en los hombros, dos bolsillos de parche, presilla para instrumentos, etiqueta con el logo con presilla elástica, costuras estilo princesa en la parte delantera y trasera y aberturas laterales. Longitud del centro de la espalda: 26","code":"WW610","price":110,"status":true,"stock":10,"category":"chaqueta","gender":"F","marca":"Cherokee","color":"blanco"},{"id":"2c104551a5abcb0a6f4b","title":"GORRO QUIRÚRGICO CON DISEÑO DAMA REGULABLE DOKTOR´S ANTIFLUIDOS DKTGRA","description":"Gorro quirúrgico con tecnología antifluidos. Diseño combinable.Cuenta con regulador para cabello abundante o recogido. Buen acabado. Toalla antialérgica que absorbe el sudor de la frente en la parte interna.Composición de la tela: poliéster.","code":"DKTGRA","price":28,"status":true,"stock":10,"category":"gorro","gender":"F","marca":"Dickies","color":"azul"},{"id":"c8c24fe0ba01b339a9ec","title":"Pantalón Azul Caribeño WW140","description":"Pantalón de pierna entallada de corte moderno para hombre con cordón interior funcional y cinturilla elástica en la parte posterior con cinco presillas para el cinturón y una bragueta con cremallera con cierre de botón. También se incluyen bolsillos de parche en la parte delantera, una etiqueta con el logo con presilla elástica, bolsillo de carga doble derecho con broche Trabilla para identificación, bolsillos traseros de parche y costuras en las rodillas. Entrepierna: 32","code":"WW140","price":180,"status":true,"stock":10,"category":"pantalon","gender":"M","marca":"Cherokee","color":"azul"}]
+[
+    {
+        "id": "0a42b7894b8d2f5a43d1",
+        "title": "Grey's Anatomy™ by Barco Spandex STRETCH Emma Women's 4-Pocket V-Neck Scrub Top",
+        "urlImagen": "https://www.uniformadvantage.com/dw/image/v2/BGPS_PRD/on/demandware.static/-/Sites-UAMasterCatalog/default/dwfd627a51/GRS011/GRS011_100424_ALAQU_2_HV.jpg?sw=600&sh=890&sm=fit",
+        "description": "Moderno y versátil, la blusa de uniforme Grey's Anatomy™ by Barco Spandex Stretch con cuello en V presenta bolsillos espaciosos para guardar fácilmente los artículos esenciales. ",
+        "code": "GRS011",
+        "price": 115,
+        "status": true,
+        "stock": 10,
+        "category": "chaqueta",
+        "gender": "F",
+        "marca": "Grey's Anatomy",
+        "color": "verde"
+    },
+    {
+        "id": "6843af7748d0da07340b",
+        "title": "Cherokee Workwear Revolution Women's 2-Pocket STRETCH Mock Wrap Scrub Top",
+        "urlImagen": "https://www.uniformadvantage.com/dw/image/v2/BGPS_PRD/on/demandware.static/-/Sites-UAMasterCatalog/default/dwdbc2a39a/CK610/CK610_041624_ELPIN_2_HV.jpg?sw=600&sh=890&sm=fit",
+        "description": "¡No te dejes engañar por su forma favorecedora! La blusa de trabajo Cherokee Revolution Mock Wrap trabaja duro para mantenerte cómodo, organizado y en movimiento todo el día.",
+        "code": "CK610",
+        "price": 110,
+        "status": true,
+        "stock": 10,
+        "category": "chaqueta",
+        "gender": "F",
+        "marca": "Cherokee",
+        "color": "rosado"
+    },
+    {
+        "id": "2c104551a5abcb0a6f4b",
+        "title": "Dickies EDS Essentials STRETCH Inner Terrycloth Scrub Hat",
+        "urlImagen": "https://www.uniformadvantage.com/dw/image/v2/BGPS_PRD/on/demandware.static/-/Sites-UAMasterCatalog/default/dw9a6fbf83/D0502/D0502_100423_PEWTE_1.jpg?sw=600&sh=890&sm=fit",
+        "description": "Un básico genial. El gorro quirúrgico unisex Dickies EDS Essentials está hecho de tela elástica con una banda interior de felpa suave.",
+        "code": "D0502",
+        "price": 28,
+        "status": true,
+        "stock": 10,
+        "category": "gorro",
+        "gender": "F",
+        "marca": "Dickies",
+        "color": "azul"
+    },
+    {
+        "id": "c8c24fe0ba01b339a9ec",
+        "title": "Pantalón médico Cherokee Workwear Revolution petite estilo cargo con 7 bolsillos para hombre",
+        "urlImagen": "https://www.uniformadvantage.com/dw/image/v2/BGPS_PRD/on/demandware.static/-/Sites-UAMasterCatalog/default/dw07ce5607/CK140/CK140_CEIL_1.jpg?sw=600&sh=890&sm=fit",
+        "description": "Diseño y rendimiento se unen en una misma prenda; el pantalón médico WW140 Cherokee Workwear Revolution estilo cargo para hombre le ayuda a tener un día de trabajo organizado y cómodo, con una durabilidad confiable. ",
+        "code": "CK140S",
+        "price": 180,
+        "status": true,
+        "stock": 10,
+        "category": "pantalon",
+        "gender": "M",
+        "marca": "Cherokee",
+        "color": "azul"
+    }
+]
