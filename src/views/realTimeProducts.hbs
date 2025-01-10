@@ -1,3 +1,103 @@
-<h3>Crear producto</h3>
+<main>
+    <h3>Crear producto</h3>
+
+    <form
+        enctype="multipart/form-data"
+        action=""
+        method="POST" class="p-4 border rounded">
+        <!-- Campo Title -->
+        <div class="mb-3">
+            <label for="title" class="form-label">Título</label>
+            <input
+                class="form-control"
+                type="text" name="title" id="title"
+                value="">
+        </div>
+
+        <!-- Campo image -->
+        <div class="mb-3">
+            <label for="image" class="form-label">Imagen</label>
+            <input type="file" name="image" id="image" class="btn btn-outline-warning">
+        </div>
+
+        <!-- Campo Precio -->
+        <div class="mb-3">
+            <label for="price" class="form-label">Precio</label>
+            <input
+                class="form-control"
+                type="number" name="price" id="price" step="0.01"
+                value="">
+        </div>
+
+        <!-- Campo Stock -->
+        <div class="mb-3">
+            <label for="stock" class="form-label">Stock</label>
+            <input
+                class="form-control"
+                type="number" name="stock" id="stock" step="1"
+                value="">
+        </div>
+
+        <!-- Campo Categoria -->
+        <div class="mb-3">
+            <label for="category" class="form-label">Categoría</label>
+
+            <select name="category" id="category" class="form-select">
+                <option value="" selected>Elija una categoria</option>
+                {{!-- <option value="chaqueta" {{#if producto.category === 'chaqueta'}}selected{{/if }}>Chaqueta</option> --}}
+                <option value="chaqueta">Chaqueta</option>
+                <option value="pantalon">Pantalón</option>
+                <option value="gorro">Gorro</option>
+            </select>
+        </div>
+
+        <!-- Campo Color -->
+        <div class="mb-3">
+            <label for="color" class="form-label">Color</label>
+
+            <select name="color" id="color" class="form-select">
+                <option value="" selected>Elija un color</option>
+                {{!-- <option value="azul" {{#if producto.color === 'azul'}}selected{{/if }}>Azul</option>
+                <option value="verde" {{#if producto.category === 'verde'}}selected{{/if }}>Verde</option>
+                <option value="rosado" {{#if producto.category === 'rosado'}}selected{{/if }}>Rosado</option>
+                <option value="blanco" {{#if producto.category === 'blanco'}}selected{{/if }}>Blanco</option>
+                <option value="negro" {{#if producto.category === 'negro'}}selected{{/if }}>Negro</option> --}}
+                <option value="azul">Azul</option>
+                <option value="verde">Verde</option>
+                <option value="rosado">Rosado</option>
+                <option value="blanco">Blanco</option>
+                <option value="negro">Negro</option>
+            </select>
+        </div>
+
+        <!-- Campo Marca -->
+        <div class="mb-3">
+            <label for="marca" class="form-label">Marca</label>
+
+            <select name="marca" id="marca" class="form-select">
+                <option value="" selected>Elija un color</option>
+                {{!-- <option value="Cherokee" {{#if producto.color === 'Cherokee'}}selected{{/if }}>Cherokee</option>
+                <option value="Dickies" {{#if producto.category === 'Dickies'}}selected{{/if }}>Dickies</option>
+                <option value="Grey's Anatomy" {{#if producto.category === "Grey's Anatomy"}}selected{{/if }}>Grey's Anatomy</option> --}}
+                <option value="Cherokee">Cherokee</option>
+                <option value="Dickies">Dickies</option>
+                <option value="Grey's Anatomy">Grey's Anatomy</option>
+            </select>
+        </div>
+
+        <!-- Campo Descripción -->
+        <div class="mb-3">
+            <label for="description" class="form-label">Descripción</label>
+            <textarea
+                class="form-control"
+                name="description" id="description"
+                rows="5"></textarea>
+        </div>
+
+        <button class="btn btn-primary" type="submit">Crear Producto</button>
+    </form>
+
+</main>
+
 <script src="/socket.io/socket.io.js"></script>
-<script src="/assets/index.js"></script>
+<script src="/assets/js/index.js"></script>

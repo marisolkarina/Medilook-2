@@ -1,26 +1,8 @@
 <main class="container">
 
     <h1 class="text-center">Medilook - Venta de uniformes médicos</h1>
-    
-    {{#if hayProductos}}
-        <h2 class="text-center">Lista de productos</h2>
-        <div class="row d-flex justify-content-center">
-            {{#each prods}}
-                <div class="card col-md-4 m-3" style="width: 20rem;">
-                    <img src="{{urlImagen}}" class="mt-3" alt="{{title}}">
-                    <h5 class="card-title text-center mt-2">{{title}}</h5>
-                    <h5 class="card-title text-center mt-2">{{price}}</h5>
-                    <p>{{description}}</p>
-                    <p>Categoria: {{category}}</p>
-                    <p>Género: {{gender}}</p>
-                    <p>Marca: {{marca}}</p>
-                    <p>Color: {{color}}</p>
-                </div>
-            {{/each}}
-        </div>
-    </div>
-    {{else}}
-        <p>No hay productos</p>
-    {{/if}}
+    <div id="products-container" class="row d-flex justify-content-center"></div>
 
 </main>
+<script src="/socket.io/socket.io.js"></script>
+<script src="./home.js"></script>
