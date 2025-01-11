@@ -2,7 +2,8 @@ import express from 'express';
 import handlebars from 'express-handlebars';
 import __dirname from './utils/utils.js';
 import { dirname } from 'node:path';
-import viewRouter from './routes/homeRouter.js';
+import homeRoute from './routes/homeRouter.js';
+import realtimeproducts from './routes/realTimeProductsRouter.js';
 import productRouter from "./routes/productRouter.js";
 import cartRouter from "./routes/cartRouter.js";
 import multer from 'multer';
@@ -46,8 +47,8 @@ const fileFilter = (req, file, cb) => {
 
 app.use(multer({ storage: storage, fileFilter: fileFilter }).single('image'));
 
-app.use('/', viewRouter);
-
+app.use('/home', homeRoute);
+app.use('/realtimeproducts', realtimeproducts);
 
 const ioServer = new Server(httpServer);
 
@@ -56,4 +57,10 @@ ioServer.on('connection', async (socket) => {
 
     const productos = await productManager.getProducts();
     socket.emit('home', productos);
+    socket.emit('realtime', productos);
+    socket.on('nuevo-producto', async(newProduct)=>{
+        await productManager.addProduct(newProduct);
+        const newList = await productManager.getProducts();
+        ioServer.emit('realtime', newList); // emite la lista actualizada de los productos a todos los clientes conectados
+    });
 });

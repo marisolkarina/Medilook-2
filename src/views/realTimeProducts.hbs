@@ -1,9 +1,14 @@
 <main>
+    <h1 class="text-center">Medilook - uniformes médicos</h1>
+    <h3 class="text-center">Productos en tiempo real</h3>
+    <div id="products-container-rtp" class="row d-flex justify-content-center"></div>
+
     <h3>Crear producto</h3>
 
     <form
+        id="formCrearProducto"
         enctype="multipart/form-data"
-        action=""
+        action="/realtimeproducts"
         method="POST" class="p-4 border rounded">
         <!-- Campo Title -->
         <div class="mb-3">
@@ -12,6 +17,13 @@
                 class="form-control"
                 type="text" name="title" id="title"
                 value="">
+        </div>
+
+        <div class="mb-3">
+            <label for="title" class="form-label">Código</label>
+            <input
+                class="form-control"
+                type="text" name="code" id="code">
         </div>
 
         <!-- Campo image -->
@@ -75,13 +87,24 @@
             <label for="marca" class="form-label">Marca</label>
 
             <select name="marca" id="marca" class="form-select">
-                <option value="" selected>Elija un color</option>
+                <option value="" selected>Elija una marca</option>
                 {{!-- <option value="Cherokee" {{#if producto.color === 'Cherokee'}}selected{{/if }}>Cherokee</option>
                 <option value="Dickies" {{#if producto.category === 'Dickies'}}selected{{/if }}>Dickies</option>
                 <option value="Grey's Anatomy" {{#if producto.category === "Grey's Anatomy"}}selected{{/if }}>Grey's Anatomy</option> --}}
                 <option value="Cherokee">Cherokee</option>
                 <option value="Dickies">Dickies</option>
                 <option value="Grey's Anatomy">Grey's Anatomy</option>
+            </select>
+        </div>
+
+        <!-- Campo Género -->
+        <div class="mb-3">
+            <label for="gender" class="form-label">Género</label>
+
+            <select name="gender" id="gender" class="form-select">
+                <option value="" selected>Elija un género</option>
+                <option value="f">F</option>
+                <option value="m">M</option>
             </select>
         </div>
 
@@ -94,10 +117,10 @@
                 rows="5"></textarea>
         </div>
 
-        <button class="btn btn-primary" type="submit">Crear Producto</button>
+        <button class="btn btn-primary" type="submit" id="crearProd">Crear Producto</button>
     </form>
 
 </main>
 
 <script src="/socket.io/socket.io.js"></script>
-<script src="/assets/js/index.js"></script>
+<script src="./realTimeProducts.js"></script>
