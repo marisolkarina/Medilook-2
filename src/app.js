@@ -45,7 +45,12 @@ const fileFilter = (req, file, cb) => {
     }
 };
 
-app.use(multer({ storage: storage, fileFilter: fileFilter }).single('image'));
+// app.use(multer({ storage: storage, fileFilter: fileFilter }).single('image'));
+
+app.use(multer({ storage: storage, fileFilter: fileFilter }).fields([
+    { name: 'image', maxCount: 1 },
+    { name: 'image2', maxCount: 1 }
+]));
 
 app.use('/home', homeRoute);
 app.use('/realtimeproducts', realtimeproducts);
@@ -64,6 +69,12 @@ ioServer.on('connection', async (socket) => {
         // emite la lista actualizada de los productos a todos los clientes conectados
         ioServer.emit('realtime', newList);
     });
+
+    socket.on('update-product', async (producto)=>{
+        await productManager.update(producto, producto.id);
+        const newList = await productManager.getProducts();
+        ioServer.emit('realtime',newList);
+    })
 
     socket.on('delete-product', async(id) => {
         await productManager.delete(id);

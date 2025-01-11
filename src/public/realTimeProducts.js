@@ -98,3 +98,68 @@ document.getElementById('products-container-rtp').addEventListener('click', (eve
 const deleteProduct = (id) => {
     socket.emit('delete-product', id);
 }
+
+
+document.querySelector('#formModificarProducto').addEventListener('submit', (event) => {
+    event.preventDefault();
+    updateProduct();
+});
+
+
+const updateProduct = () => {
+    const formData = new FormData();
+
+    formData.append('id', document.querySelector('#id2').value);
+    formData.append('title', document.querySelector('#title2').value);
+    formData.append('description', document.querySelector('#description2').value);
+    formData.append('price', document.querySelector('#price2').value);
+    formData.append('code', document.querySelector('#code2').value);
+    formData.append('stock', document.querySelector('#stock2').value);
+    formData.append('category', document.querySelector('#category2').value);
+    formData.append('marca', document.querySelector('#marca2').value);
+    formData.append('color', document.querySelector('#color2').value);
+    formData.append('gender', document.querySelector('#gender2').value);
+    formData.append('image', document.querySelector('#image2').files[0]);
+
+    fetch('/realtimeproducts', {
+        method: 'POST',
+        body: formData
+    })
+        .then((response) => response.json())
+        .then((data) => {
+            if (data.success) {
+                const { urlImagen } = data;
+
+                const producto = {
+                    id: formData.get('id'),
+                    title: formData.get('title'),
+                    description: formData.get('description'),
+                    price: Number(formData.get('price')),
+                    code: formData.get('code'),
+                    stock: Number(formData.get('stock')),
+                    category: formData.get('category'),
+                    marca: formData.get('marca'),
+                    color: formData.get('color'),
+                    gender: formData.get('gender'),
+                    urlImagen: urlImagen
+                };
+
+                console.log(producto);
+
+                socket.emit('update-product', producto);
+
+                document.querySelector('#id2').value = "";
+                document.querySelector('#title2').value = "";
+                document.querySelector('#description2').value = "";
+                document.querySelector('#price2').value = "";
+                document.querySelector('#code2').value = "";
+                document.querySelector('#stock2').value = "";
+                document.querySelector('#category2').value = "";
+                document.querySelector('#marca2').value = "";
+                document.querySelector('#color2').value = "";
+                document.querySelector('#category2').value = "";
+            } else {
+                console.log('Error al subir la imagen.');
+            }
+        });
+}
