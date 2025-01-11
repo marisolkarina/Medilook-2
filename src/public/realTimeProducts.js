@@ -20,10 +20,7 @@ socket.on('realtime', (productos) => {
                 <p>Código: ${producto.code}</p>
                 <p>Stock: ${producto.stock}</p>
                 <input type="hidden" value="${producto.id}" id="idProducto">
-                <div class="d-flex mb-3">
-                    <button id="modificarProd" class="btn btn-warning w-50 mx-1">Modificar</button>
-                    <button id="eliminarProd" class="btn btn-danger w-50 mx-1">Eliminar</button>
-                </div>
+                <button id="eliminarProd" class="btn btn-danger w-50 mx-1">Eliminar</button>
             </div>
         `;
     });
