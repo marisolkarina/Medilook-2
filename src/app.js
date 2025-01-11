@@ -61,6 +61,14 @@ ioServer.on('connection', async (socket) => {
     socket.on('nuevo-producto', async(newProduct)=>{
         await productManager.addProduct(newProduct);
         const newList = await productManager.getProducts();
-        ioServer.emit('realtime', newList); // emite la lista actualizada de los productos a todos los clientes conectados
+        // emite la lista actualizada de los productos a todos los clientes conectados
+        ioServer.emit('realtime', newList);
+    });
+
+    socket.on('delete-product', async(id) => {
+        await productManager.delete(id);
+        const newList = await productManager.getProducts();
+        // emite la lista actualizada de los productos a todos los clientes conectados
+        ioServer.emit('realtime', newList);
     });
 });

@@ -19,6 +19,11 @@ socket.on('realtime', (productos) => {
                 <p>Color: ${producto.color}</p>
                 <p>Código: ${producto.code}</p>
                 <p>Stock: ${producto.stock}</p>
+                <input type="hidden" value="${producto.id}" id="idProducto">
+                <div class="d-flex mb-3">
+                    <button id="modificarProd" class="btn btn-warning w-50 mx-1">Modificar</button>
+                    <button id="eliminarProd" class="btn btn-danger w-50 mx-1">Eliminar</button>
+                </div>
             </div>
         `;
     });
@@ -85,3 +90,14 @@ document.querySelector('#formCrearProducto').addEventListener('submit', (event) 
     event.preventDefault();
     addProduct();
 });
+
+document.getElementById('products-container-rtp').addEventListener('click', (event) => {
+    if (event.target && event.target.id === 'eliminarProd') {
+        const idProducto = event.target.previousElementSibling.value;
+        deleteProduct(idProducto);
+    }
+});
+
+const deleteProduct = (id) => {
+    socket.emit('delete-product', id);
+}
